@@ -1,0 +1,4 @@
+tench
+goldfish
+... (998 more lines, standard ImageNet class labels) ...
+toilet tissue 
