@@ -65,7 +65,16 @@ app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{args.db_user}:{args.db_p
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
-s3 = boto3.client('s3')
+# S3 Knowledge Base configuration (hardcoded)
+S3_KB_BUCKET = 'demo'
+S3_KB_PREFIX = 'knowledge-base/'
+
+s3 = boto3.client(
+    's3',
+    aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+    aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
+    region_name=os.getenv('AWS_REGION')
+)
 sagemaker_client = boto3.client('sagemaker', region_name='us-east-1')
 
 # Dummy user data
