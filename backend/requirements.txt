@@ -9,3 +9,7 @@ sqlalchemy
 scikit-learn
 botocore
 python-dotenv
+flask_sqlalchemy
+PyJWT
+requests
+psycopg2-binary
